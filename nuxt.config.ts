@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // devtools: { enabled: true }
-  css: ['~/assets/style.css']
+  css: ['~/assets/style.css'],
+  plugins: [
+    '~/plugins/naive.ts'
+  ]
 })
