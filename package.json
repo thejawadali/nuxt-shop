@@ -13,5 +13,9 @@
     "@types/node": "^18",
     "naive-ui": "^2.34.4",
     "nuxt": "^3.5.2"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.11",
+    "pinia": "^2.1.4"
   }
 }

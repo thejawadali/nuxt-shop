@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
   // devtools: { enabled: true }
   css: ['~/assets/style.css'],
+  modules: [
+    '@pinia/nuxt',
+  ],
   plugins: [
     '~/plugins/naive.ts'
-  ]
+  ],
 })
