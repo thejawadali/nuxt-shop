@@ -1,0 +1,11 @@
+{
+  "nuxt.isNuxtApp": false,
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#f8f8f2",
+    "editorIndentGuide.activeBackground": "#f8f8f2",
+    "editorIndentGuide.background": "#44475a",
+    "activityBar.background": "#223126",
+    "titleBar.activeBackground": "#2F4536",
+    "titleBar.activeForeground": "#F8FAF8"
+  }
+}
