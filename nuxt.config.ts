@@ -8,4 +8,9 @@ export default defineNuxtConfig({
   plugins: [
     '~/plugins/naive.ts'
   ],
+  runtimeConfig: {
+    public: {
+      api_base_url: process.env.API_BASE_URL
+    }
+  }
 })
