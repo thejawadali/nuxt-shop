@@ -18,6 +18,9 @@ export default defineNuxtConfig({
     autoImports: true,
     prefix: ""
   },
+  imports: {
+    autoImport: true
+  },
   veeValidate: {
     autoImports: true,
   },

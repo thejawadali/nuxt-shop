@@ -1,11 +1,40 @@
 <template>
-  <div>
-
+  <div class="w-full min-h-screen flex justify-center items-center">
+    <div class="border w-[28rem] rounded shadow p-5">
+      <h1 class="font-semibold ml-1 text-lg">Login</h1>
+      <form @submit.prevent="onSubmit">
+        <Inputfield placeholder="Enter email" label="Email" :error="email_errorMessage" v-model="email" />
+        <Inputfield type="password" placeholder="Password" label="Password" :error="password_errorMessage"
+          v-model="password" />
+        <button type="submit"
+          class="rounded w-full my-3 bg-green-600 px-2 py-2 text-xs font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Submit</button>
+      </form>
+    </div>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import * as yup from 'yup'
+
+
+const validationSchema = yup.object( {
+  email: yup.string().required( 'Email is required' ).email( "Valid email is required" ),
+  password: yup.string().required( 'Password is required' ).min( 8, 'Min 8 characters' )
+} )
+
+const { handleSubmit } = useForm( {
+  validationSchema,
+} )
+
+
+const onSubmit = handleSubmit( values => {
+  console.log( values )
+
+} )
+
+const { value: email, errorMessage: email_errorMessage } = useField( 'email' )
+const { value: password, errorMessage: password_errorMessage } = useField( 'password' );
+
+
 
 </script>
-
-<style scoped></style>

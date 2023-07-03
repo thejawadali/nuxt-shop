@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@tailwindcss/forms": "^0.5.3",
     "@types/node": "^18",
     "@types/yup": "^0.32.0",
     "autoprefixer": "^10.4.14",
@@ -22,6 +23,7 @@
     "@vee-validate/nuxt": "^4.10.2",
     "nuxt-headlessui": "^1.1.4",
     "pinia": "^2.1.4",
+    "vue-tabler-icons": "^2.21.0",
     "yup": "^1.2.0"
   }
 }
