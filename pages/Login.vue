@@ -7,8 +7,7 @@
           v-model="username" />
         <Inputfield id="password" type="password" placeholder="Password" label="Password" :error="password_errorMessage"
           v-model="password" />
-        <button type="submit"
-          class="rounded w-full my-3 bg-green-600 px-2 py-2 text-xs font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Submit</button>
+        <Button type="submit">Submit</Button>
       </form>
     </div>
   </div>
