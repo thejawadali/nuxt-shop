@@ -3,8 +3,9 @@
     <div class="border w-[28rem] rounded shadow p-5">
       <h1 class="font-semibold ml-1 text-lg">Login</h1>
       <form @submit.prevent="onSubmit">
-        <Inputfield placeholder="Enter email" label="Email" :error="email_errorMessage" v-model="email" />
-        <Inputfield type="password" placeholder="Password" label="Password" :error="password_errorMessage"
+        <Inputfield id="username" placeholder="Enter username" label="Username" :error="username_errorMessage"
+          v-model="username" />
+        <Inputfield id="password" type="password" placeholder="Password" label="Password" :error="password_errorMessage"
           v-model="password" />
         <button type="submit"
           class="rounded w-full my-3 bg-green-600 px-2 py-2 text-xs font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Submit</button>
@@ -16,14 +17,18 @@
 <script setup>
 import * as yup from 'yup'
 
-
 const validationSchema = yup.object( {
-  email: yup.string().required( 'Email is required' ).email( "Valid email is required" ),
-  password: yup.string().required( 'Password is required' ).min( 8, 'Min 8 characters' )
+  username: yup.string().required( 'username is required' ),
+  password: yup.string().required( 'Password is required' )
 } )
 
 const { handleSubmit } = useForm( {
   validationSchema,
+} )
+
+onMounted( () => {
+  username.value = 'kminchelle'
+  password.value = '0lelplR'
 } )
 
 
@@ -32,7 +37,7 @@ const onSubmit = handleSubmit( values => {
 
 } )
 
-const { value: email, errorMessage: email_errorMessage } = useField( 'email' )
+const { value: username, errorMessage: username_errorMessage } = useField( 'username' )
 const { value: password, errorMessage: password_errorMessage } = useField( 'password' );
 
 
