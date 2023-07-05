@@ -1,0 +1,10 @@
+user lands on store front page
+store front page will have
+ i. navbar with signin button (if not sigined in)
+ ii. categories in a dropdown
+ iii. products
+ iv. navbar with search bar
+user can find products of a specific category
+user can add products to cart
+user can view cart in side bar
+user can checkout

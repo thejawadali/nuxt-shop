@@ -7,7 +7,7 @@
           v-model="username" />
         <Inputfield id="password" type="password" placeholder="Password" label="Password" :error="password_errorMessage"
           v-model="password" />
-        <Button type="submit">Submit</Button>
+        <Button :loading="authStore.loading" type="submit">Submit</Button>
       </form>
     </div>
   </div>
@@ -15,6 +15,14 @@
 
 <script setup>
 import * as yup from 'yup'
+import { useAuthStore } from "../store/authStore"
+
+
+useHead( {
+  title: "Nuxt Mart - Login"
+} )
+
+const authStore = useAuthStore()
 
 const validationSchema = yup.object( {
   username: yup.string().required( 'username is required' ),
@@ -31,10 +39,7 @@ onMounted( () => {
 } )
 
 
-const onSubmit = handleSubmit( values => {
-  console.log( values )
-
-} )
+const onSubmit = handleSubmit( authStore.login )
 
 const { value: username, errorMessage: username_errorMessage } = useField( 'username' )
 const { value: password, errorMessage: password_errorMessage } = useField( 'password' );

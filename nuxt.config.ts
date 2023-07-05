@@ -12,8 +12,12 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
     '@vee-validate/nuxt',
-    'nuxt-headlessui'
+    'nuxt-headlessui',
+    '@vueuse/nuxt'
   ],
+  typescript: {
+
+  },
   headlessui: {
     autoImports: true,
     prefix: ""
@@ -24,8 +28,16 @@ export default defineNuxtConfig({
   veeValidate: {
     autoImports: true,
   },
+  vueuse: {
+    autoImports: true
+  },
   plugins: [
   ],
+  app: {
+    head: {
+      title: "Nuxt Mart"
+    }
+  },
   runtimeConfig: {
     public: {
       api_base_url: process.env.API_BASE_URL
